@@ -41,7 +41,10 @@ require('./views/main.less');
 
         $this.data('gpa', {
           target: $this,
-          is_sent_email: JSON.parse(localStorage.getItem("gpa_is_sent_email")) || false, //get data from localStorage
+
+          //is_sent_email: JSON.parse(localStorage.getItem("gpa_is_sent_email")) || false, //get data from localStorage
+          is_sent_email: true, //for github demo : https://olgax.github.io/gpa-calculator/public/
+
           is_valid_email: false,
           common_result: '',
           semester_id: 1
