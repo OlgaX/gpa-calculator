@@ -4,7 +4,7 @@ module.exports = {
     entry: "./src/gpa-calculator.js",
     output: {
         path: __dirname + '/public/wp-content/special/gpa-calculator/',
-        publicPath: "/wp-content/special/gpa-calculator/",
+        publicPath: "./wp-content/special/gpa-calculator/",
         filename: "gpa-calculator.js"
     },
     devtool: 'source-map',
