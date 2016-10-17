@@ -1,0 +1,16 @@
+<div data-gpa-college="fields-row" class="gpa-row college-class">
+  <div class="gpa-col-md-2 gpa-col-sm-3">
+    <div class="gpa-title gpa-title-blue">Class <%= class_id %></div>
+  </div>
+  <div class="gpa-col-md-5 gpa-col-sm-5">
+    <select data-gpa-college="grade" class="gpa-select gpa-grade" placeholder="Select Grade">
+      <option disabled="disabled" selected="selected"></option>
+      <% _.each(grade, function(item){ %>
+        <option value="<%= item.value %>"><%= item.label %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div class="gpa-col-md-5 gpa-col-sm-4">
+    <input data-gpa-college="credits" type="number" class="gpa-input gpa-credits selectize-input" min="0" placeholder="Type your credits"/>
+  </div>
+</div>

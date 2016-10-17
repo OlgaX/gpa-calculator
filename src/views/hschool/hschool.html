@@ -1,0 +1,40 @@
+<section data-gpa-calculator="hschool" class="gpa-section hschool-calculator">
+  <div data-gpa-hschool="form-wrap" class="hschool-courses-wrap">
+    <div class="gpa-row gpa-valign">
+      <div class="gpa-col gpa-col-md-9">
+        <div class="gpa-row hschool-titles-wrap">
+          <div class="gpa-col-sm-6">
+            <div class="gpa-title">Course:</div>
+          </div>
+          <div class="gpa-col-sm-3">
+            <div class="gpa-title">Grade:</div>
+          </div>
+          <div class="gpa-col-sm-3">
+            <div class="gpa-title">Course Type:</div>
+          </div>
+        </div>
+        <div data-gpa-hschool="courses-wrap" class="hschool-courses-wrap">
+          <% for (var i = 1; i <= 5; i++) { %>
+            <%= tpl_course({grade: grade, courses: courses, course_types: course_types, course_id: i}) %>
+          <% } %>
+        </div>
+        <div class="gpa-btns-wrap gpa-row">
+          <div class="gpa-col-sm-5">
+            <button data-gpa-hschool="add-course-btn" class="gpa-btn gpa-btn-blue gpa-btn-block hschool-add-course-btn">Add another course</button>
+          </div>
+          <div class="gpa-col-sm-7">
+            <button data-gpa-hschool="calculate-btn" class="gpa-btn gpa-btn-green gpa-btn-block hschool-calculate-btn">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <div class="gpa-col gpa-col-md-3">
+        <div data-gpa-hschool="result-block" class="gpa-result-block gpa-result-block-green">
+          <div class="gpa-result-title">Your GPA:</div>
+          <div class="gpa-result-wrap selectize-input">
+            <div data-gpa-hschool="result" class="gpa-result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

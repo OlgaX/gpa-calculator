@@ -1,0 +1,39 @@
+<div data-gpa-college="semester" class="college-semester">
+  <div data-gpa-college="form-wrap" class="college-form">
+    <div class="gpa-title">Semester <%= semester_id %></div>
+    <div class="gpa-row gpa-valign">
+      <div class="gpa-col-sm-9">
+        <div data-gpa-college="classes-wrap" class="college-classes-wrap">
+          <% for (var i = 1; i <= 5; i++) { %>
+            <%= tpl_class({class_id:i, grade: grade}) %>
+          <% } %>
+        </div>
+        <div class="gpa-btns-wrap gpa-row">
+          <div class="gpa-col-sm-6">
+            <button data-gpa-college="add-class-btn" class="gpa-btn gpa-btn-blue gpa-btn-block college-add-class-btn">Add class</button>
+          </div>
+          <div class="gpa-col-sm-6">
+            <button data-gpa-college="add-semester-btn" class="gpa-btn gpa-btn-orange gpa-btn-block college-add-semester-btn">Add semester</button>
+          </div>
+          <div class="gpa-col-sm-12">
+            <button data-gpa-college="calculate-btn" class="gpa-btn gpa-btn-green gpa-btn-block college-calculate-btn">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <div class="gpa-col-sm-3">
+        <div data-gpa-college="result-block" class="gpa-result-block gpa-result-block-green">
+          <div class="gpa-result-title">Your semester GPA:</div>
+          <div class="gpa-result-wrap selectize-input">
+            <div data-gpa-college="result" class="gpa-result"></div>
+          </div>
+        </div>
+        <div data-gpa-college="common-result-block" class="gpa-result-block gpa-result-block-orange college-common-result-block" style="display:none;">
+          <div class="gpa-result-title">Your overall GPA:</div>
+          <div class="gpa-result-wrap selectize-input">
+            <div data-gpa-college="common-result" class="gpa-result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,303 @@
+@blue: #00aacc;
+@blue2: #0493af;
+
+@orange: #ffbc3a;
+@orange2: #ffa800;
+
+@green: #a0bf23;
+@green2: #8aa51e;
+
+@red: #ff7272;
+
+.gpa-section {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+}
+
+//GRID
+//--------------------------------------------------
+.gpa-section {
+  padding-left: 15px;
+  padding-right: 15px;
+  &, * {
+    box-sizing: border-box;
+    &:before, &:after {box-sizing: border-box;}
+  }
+}
+
+.gpa-row {
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+  &:after {clear: both;}
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+}
+
+[class*="gpa-col-"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+[class*="gpa-col-xs-"] {float: left;}
+
+.col-grid(){
+  &-12 {width: 100%;}
+  &-11 {width: 91.66666667%;}
+  &-10 {width: 83.33333333%;}
+  &-9 {width: 75%;}
+  &-8 {width: 66.66666667%;}
+  &-7 {width: 58.33333333%;}
+  &-6 {width: 50%;}
+  &-5 {width: 41.66666667%;}
+  &-4 {width: 33.33333333%;}
+  &-3 {width: 25%;}
+  &-2 {width: 16.66666667%;}
+  &-1 {width: 8.33333333%;}
+}
+
+@media (min-width: 768px) {
+  .gpa-col-sm {
+    .col-grid();
+  }
+  [class*="gpa-col-sm-"] {float: left;}
+
+  .college-calculator {
+    .gpa-valign {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .hschool-course {
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .gpa-col-md {
+    .col-grid();
+  }
+  [class*="gpa-col-md-"] {float: left;}
+
+  .hschool-calculator {
+    .gpa-valign {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .gpa-col-lg {
+    .col-grid();
+    [class*="gpa-col-lg-"] {float: left;}
+  }
+}
+
+//TITLES
+//--------------------------------------------------
+.gpa-title {
+  font-size: 22px;
+  line-height: 36px;
+  &-blue {color: @blue;}
+}
+
+//BUTTONS
+//--------------------------------------------------
+.gpa-btn {
+  height: 50px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  border-radius: 4px;
+  user-select: none;
+  overflow: visible;
+  cursor: pointer;
+  -webkit-appearance: button;
+  &:hover, &:focus{
+    color: #333333;
+    text-decoration: none;
+  }
+  &:active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  &[disabled] {
+    &, &:hover {
+      cursor: not-allowed;
+      opacity: 0.65;
+      box-shadow: none;
+      background-color: #e6e6e6;
+    }
+  }
+  @media (min-width: 768px) {
+    min-width: 120px;
+  }
+  @media (min-width: 992px) {
+    font-size: 22px;
+  }
+}
+
+//blue btn
+.gpa-btn-blue {
+  color: #ffffff;
+  background-color: @blue;
+  &:focus, &:hover, &:active {
+    color: #ffffff;
+    background-color: @blue2;
+  }
+}
+
+//orange btn
+.gpa-btn-orange {
+    color: #ffffff;
+    background-color: @orange;
+  &:focus, &:hover, &:active {
+    color: #ffffff;
+    background-color: @orange2;
+  }
+}
+
+//green btn
+.gpa-btn-green {
+    color: #ffffff;
+    background-color: @green;
+  &:focus, &:hover, &:active {
+    color: #ffffff;
+    background-color: @green2;
+  }
+}
+
+//full width button
+.gpa-btn-block {
+  display: block;
+  width: 100%;
+  & + & {margin-top: 5px;}
+}
+
+//FORM ELEMENTS (input, select)
+//--------------------------------------------------
+@import "selectize.css";
+
+//ERRORS
+//--------------------------------------------------
+.gpa-empty-data,
+.gpa-empty-data + .gpa-select .selectize-input,
+.gpa-invalid-email {
+  border: 1px solid @red;
+  border-radius: 4px;
+}
+
+.gpa-invalid-email-msg {
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  color: @red;
+  font-size: 12px;
+  @media (min-width: 768px) {font-size: 14px;}
+}
+
+//GPA-RESULT BLOCKS
+//--------------------------------------------------
+.gpa-result {
+  font-size: 50px;
+  &-block {text-align: center;}
+  &-title {
+    padding-bottom: 5px;
+    font-size: 22px;
+  }
+  &-wrap {
+    height: 60px;
+    line-height: 60px;
+    max-width: 200px;
+    padding: 0;
+    cursor: default;
+  }
+  &-block-green {
+    &, .gpa-result {color: @green;}
+    .gpa-result-wrap {border-color: @green;}
+  }
+  &-block-orange {
+    margin-top: 15px;
+    @media (min-width: 768px) {margin-top: 50px;}
+    &, .gpa-result {color: @orange;}
+    .gpa-result-wrap {border-color: @orange;}
+  }
+  &-disabled {
+    .gpa-result {display: none;}
+    &, .gpa-result {color:#d9d9d9;}
+    .gpa-result-wrap {border-color: #d9d9d9;}
+  }
+}
+
+//GPA-EMAIL-BLOCK
+//--------------------------------------------------
+.gpa-email {
+  &-block {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+  }
+  &-input-wrap {
+    display: table-cell;
+    width: 100%;
+  }
+  &-input {
+    height: 50px;
+    vertical-align: middle;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0
+  }
+  &-btn {
+    display: table-cell;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+//COLLEGE-CALCULATOR LAYOUT
+//--------------------------------------------------
+.college {
+  &-calculator {.gpa-btns-wrap {margin-top: 25px;}}
+  &-class {
+    padding: 15px 0;
+    border-top: 1px dashed #e5e5e5;
+    &:first-child {border-top: 0;}
+  }
+  &-semester {
+		padding: 15px 0;
+		&:not(:last-child) .college-common-result-block {display: none !important;}
+	}
+}
+
+//HSHCOOL-CALCULATOR LAYOUT
+//--------------------------------------------------
+.hschool {
+  &-calculator {.gpa-btns-wrap {margin-top: 25px;}}
+  &-course {padding: 15px 0;}
+  &-titles-wrap {display: none;}
+  &-course-title {padding-bottom: 10px;}
+  @media (min-width: 768px) {
+    &-titles-wrap {display: block;}
+    &-course-title {display: none;}
+  }
+}

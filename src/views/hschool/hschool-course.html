@@ -1,0 +1,27 @@
+<div data-gpa-hschool="fields-row" class="gpa-row hschool-course">
+  <div class="gpa-col gpa-col-sm-6">
+    <div class="hschool-course-title gpa-title gpa-title-blue">Course <%= course_id %></div>
+    <select data-gpa-hschool="courses" class="gpa-select gpa-courses" placeholder="Course name">
+      <option disabled="disabled" selected="selected"></option>
+      <% _.each(courses, function(item){ %>
+        <option value="<%= item.id %>"><%= item.label %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div class="gpa-col gpa-col-sm-3">
+    <select data-gpa-hschool="grade" class="gpa-select gpa-grade" placeholder="Select Grade">
+      <option disabled="disabled" selected="selected"></option>
+      <% _.each(grade, function(item){ %>
+        <option value="<%= item.value %>"><%= item.label %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div class="gpa-col gpa-col-sm-3">
+    <select data-gpa-hschool="course-types" class="gpa-select gpa-course-types" placeholder="Select Level">
+      <option disabled="disabled" selected="selected"></option>
+      <% _.each(course_types, function(item){ %>
+        <option value="<%= item.value %>"><%= item.label %></option>
+      <% }); %>
+    </select>
+  </div>
+</div>
